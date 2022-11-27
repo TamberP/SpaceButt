@@ -22,7 +22,7 @@ async def main():
     global confs
     background_tasks = set()
 
-    bridge = ThreadingHTTPServer(("127.0.0.1", 42069), BridgeServer)
+    bridge = ThreadingHTTPServer(("127.0.0.1", confs['Bridge']['Port']), BridgeServer)
     stuff._setComms(DiscoClient())
     stuff._setLoop(asyncio.get_running_loop())
 
