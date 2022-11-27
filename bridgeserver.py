@@ -39,7 +39,7 @@ class BridgeServer(BaseHTTPRequestHandler):
         #  - api_key: This is configured on the game server by the config option IRCBOT_API
 
         if 'api_key' in reqargs:
-            if(reqargs["api_key"] != "testkeypleaseignore"):
+            if(reqargs["api_key"] == stuff.getConfigs()['Bridge']['Key']):
                 # Correct api key
                 if endpoint == "event":
                     # Something Has Happened
